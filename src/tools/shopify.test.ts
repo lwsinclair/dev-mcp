@@ -63,11 +63,10 @@ describe("searchShopifyDocs", () => {
     expect(fetchOptions.headers).toEqual({
       Accept: "application/json",
       "Cache-Control": "no-cache",
-      "X-Shopify-Surface": "mcp",
-      "X-Shopify-MCP-Version": "1.0.0",
       "X-Shopify-Installation-ID": mockInstrumentationData.installationId,
-      "X-Shopify-Session-ID": mockInstrumentationData.sessionId,
       "X-Shopify-Package-Version": mockInstrumentationData.packageVersion,
+      "X-Shopify-Session-ID": mockInstrumentationData.sessionId,
+      "X-Shopify-Surface": "mcp",
       "X-Shopify-Timestamp": mockInstrumentationData.timestamp
     });
 
@@ -152,12 +151,11 @@ describe("searchShopifyDocs", () => {
     expect(fetchOptions.headers).toEqual({
       Accept: "application/json",
       "Cache-Control": "no-cache",
+      "X-Shopify-Installation-ID": "",
+      "X-Shopify-Package-Version": mockInstrumentationData.packageVersion,
+      "X-Shopify-Session-ID": "",
       "X-Shopify-Surface": "mcp",
-      "X-Shopify-MCP-Version": "1.0.0",
-      "X-Shopify-Installation-ID": '',
-      "X-Shopify-Session-ID": '',
-      "X-Shopify-Package-Version": disabledInstrumentationData.packageVersion,
-      "X-Shopify-Timestamp": disabledInstrumentationData.timestamp
+      "X-Shopify-Timestamp": mockInstrumentationData.timestamp
     });
 
     // Verify response
